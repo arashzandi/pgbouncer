@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  postgresql:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+  pgbouncer:
+    image: deed-pgbouncer:ssl
+    build: ./
+    environment:
+       - PGBOUNCER_PORT=5432
+       - POSTGRESQL_PASSWORD=password
+       - POOL_MODE=session
+       - PGBOUNCER_CLIENT_TLS_SSLMODE=require
+       - PGBOUNCER_CLIENT_TLS_CERT_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.crt
+       - PGBOUNCER_CLIENT_TLS_KEY_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.key
+    ports:
+      - "5432:5432"
+    depends_on:
+      - postgresql
