@@ -12,8 +12,9 @@ services:
     build: ./
     environment:
        - PGBOUNCER_PORT=5432
+       - PGBOUNCER_AUTH_USER=postgres
        - POSTGRESQL_PASSWORD=password
-       - POOL_MODE=session
+       - POSTGRESQL_USERNAME=postgres
        - PGBOUNCER_CLIENT_TLS_SSLMODE=require
        - PGBOUNCER_CLIENT_TLS_CERT_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.crt
        - PGBOUNCER_CLIENT_TLS_KEY_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.key

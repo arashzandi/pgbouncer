@@ -24,7 +24,8 @@ Build and push the image to ECR:
 
 If you intend to use the image in ECS, remember to pass the following environment variables:
 ```
-POSTGRESQL_USERNAME= <nom>
+PGBOUNCER_AUTH_USER= <auroraadmin>
+POSTGRESQL_USERNAME= <auroraadmin>
 POSTGRESQL_PASSWORD= <passwuert>
 POSTGRESQL_DATABASE= <database name>
 POSTGRESQL_HOST= <RDS Endpoint>
