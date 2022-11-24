@@ -2,6 +2,11 @@
 
 Based on a true [story](https://www.crunchydata.com/blog/improving-pgbouncer-security-with-tlsssl)
 
+Generate new self-signed certificate:
+ ```
+ ./generate-cert.sh
+ ```
+
 Build and run Postgres and PgBouncer locally:
 ```
 docker-compose up --build
