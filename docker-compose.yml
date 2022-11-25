@@ -10,14 +10,7 @@ services:
   pgbouncer:
     image: deed-pgbouncer:ssl
     build: ./
-    environment:
-       - PGBOUNCER_PORT=5432
-       - PGBOUNCER_AUTH_USER=postgres
-       - POSTGRESQL_PASSWORD=password
-       - POSTGRESQL_USERNAME=postgres
-       - PGBOUNCER_CLIENT_TLS_SSLMODE=require
-       - PGBOUNCER_CLIENT_TLS_CERT_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.crt
-       - PGBOUNCER_CLIENT_TLS_KEY_FILE=/opt/bitnami/pgbouncer/certs/pgbouncer.key
+    env_file: .env.local
     ports:
       - "5432:5432"
     depends_on:
