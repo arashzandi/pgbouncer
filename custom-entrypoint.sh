@@ -1,8 +1,6 @@
 #!/bin/bash
 
 set -o errexit
-set -o nounset
-set -o pipefail
 
 # openssl genrsa -des3 -out pgbouncer.key -passout pass:foobar 2048
 # openssl rsa -in pgbouncer.key -out pgbouncer.key -passin pass:foobar
